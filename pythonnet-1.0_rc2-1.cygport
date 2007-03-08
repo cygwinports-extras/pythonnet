@@ -1,0 +1,26 @@
+inherit python mono
+
+DESCRIPTION=".NET interface for C Python runtime"
+HOMEPAGE="http://pythonnet.sourceforge.net/"
+SRC_DIR="${P/_rc/-rc}-py${PYTHON_VERSION}-clr1.1-src"
+SRC_URI="mirror://sourceforge/${PN}/${SRC_DIR}.tgz"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake clean
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	exeinto /usr/lib/${PN}
+	doexe *.dll *.exe
+
+	insinto /usr/lib/${PN}
+	doins *.config
+
+	mono_wrapper ${PN} /usr/lib/${PN}/python.exe
+
+	dodoc doc/*.{txt,html}
+}

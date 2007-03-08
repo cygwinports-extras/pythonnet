@@ -1,0 +1,72 @@
+pythonnet
+------------------------------------------
+Python for .NET is a package that gives Python programmers nearly 
+seamless integration with the .NET Common Language Runtime (CLR) and 
+provides a powerful application scripting tool for .NET developers. 
+Using this package you can script .NET applications or build entire 
+applications in Python, using .NET services and components written in 
+any language that targets the CLR (Managed C++, C#, VB, JScript).
+
+Note that this package does not implement Python as a first-class CLR 
+language - it does not produce managed code (IL) from Python code. 
+Rather, it is an integration of the C Python engine with the .NET 
+runtime. This approach allows you to use use CLR services and continue 
+to use existing Python code and C-based extensions while maintaining 
+native execution speeds for Python code.
+
+Runtime requirements:
+  cygwin-1.5.24-2
+  mono-1.2.3.1-1
+  python-2.4.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygwin-1.5.24-2
+  cygport-0.2.10-1
+  make-3.81-1
+  mono-1.2.3.1-1
+
+Canonical website:
+  http://pythonnet.sourceforge.net/
+
+Canonical download:
+  http://downloads.sourceforge.net/pythonnet/
+
+-------------------------------------------
+
+Build instructions:
+  unpack pythonnet-1.0_rc2-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./pythonnet-1.0_rc2-X.cygport all
+
+This will create:
+  /usr/src/pythonnet-1.0_rc2-X-src.tar.bz2
+  /usr/src/pythonnet-1.0_rc2-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /usr/bin/pythonnet
+  /usr/lib/pythonnet/CLR.dll
+  /usr/lib/pythonnet/Python.Runtime.dll
+  /usr/lib/pythonnet/Python.Runtime.dll.config
+  /usr/lib/pythonnet/Python.Test.dll
+  /usr/lib/pythonnet/python.exe
+  /usr/share/doc/Cygwin/pythonnet-1.0_rc2.README
+  /usr/share/doc/pythonnet-1.0_rc2/changes.txt
+  /usr/share/doc/pythonnet-1.0_rc2/license.txt
+  /usr/share/doc/pythonnet-1.0_rc2/readme.html
+
+------------------
+
+Port Notes:
+
+----- version 1.0_rc2-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/

@@ -1,0 +1,16 @@
+category: Dotnet Python
+requires: cygwin mono python
+sdesc: ".NET Python runtime integration"
+ldesc: "Python for .NET is a package that gives Python programmers nearly
+seamless integration with the .NET Common Language Runtime (CLR) and
+provides a powerful application scripting tool for .NET developers.
+Using this package you can script .NET applications or build entire
+applications in Python, using .NET services and components written in
+any language that targets the CLR (Managed C++, C#, VB, JScript).
+
+Note that this package does not implement Python as a first-class CLR
+language - it does not produce managed code (IL) from Python code.
+Rather, it is an integration of the C Python engine with the .NET
+runtime. This approach allows you to use use CLR services and continue
+to use existing Python code and C-based extensions while maintaining
+native execution speeds for Python code."
