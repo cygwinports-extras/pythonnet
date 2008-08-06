@@ -1,12 +1,10 @@
 Files origsrc/pythonnet-1.0-rc2-py2.4-clr1.1-src/CLR.dll and src/pythonnet-1.0-rc2-py2.4-clr1.1-src/CLR.dll differ
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x mdate-sh -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x omf.make -x xmldocs.make origsrc/pythonnet-1.0-rc2-py2.4-clr1.1-src/Python.Runtime.dll.config src/pythonnet-1.0-rc2-py2.4-clr1.1-src/Python.Runtime.dll.config
 --- origsrc/pythonnet-1.0-rc2-py2.4-clr1.1-src/Python.Runtime.dll.config	1969-12-31 18:00:00.000000000 -0600
 +++ src/pythonnet-1.0-rc2-py2.4-clr1.1-src/Python.Runtime.dll.config	2007-03-08 13:18:50.515312200 -0600
 @@ -0,0 +1,3 @@
 +<configuration>
 +    <dllmap dll="python24" target="libpython2.4.dll"/>
 +</configuration>
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x mdate-sh -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x omf.make -x xmldocs.make origsrc/pythonnet-1.0-rc2-py2.4-clr1.1-src/makefile src/pythonnet-1.0-rc2-py2.4-clr1.1-src/makefile
 --- origsrc/pythonnet-1.0-rc2-py2.4-clr1.1-src/makefile	2005-06-05 10:56:11.000000000 -0500
 +++ src/pythonnet-1.0-rc2-py2.4-clr1.1-src/makefile	2007-03-08 13:26:42.453559000 -0600
 @@ -2,10 +2,10 @@
