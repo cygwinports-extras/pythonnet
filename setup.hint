@@ -1,5 +1,5 @@
 category: Dotnet Python
-requires: cygwin mono python
+requires: mono python
 sdesc: ".NET Python runtime integration"
 ldesc: "Python for .NET is a package that gives Python programmers nearly
 seamless integration with the .NET Common Language Runtime (CLR) and
