@@ -1,0 +1,31 @@
+--- origsrc/pythonnet-2.0-alpha2/Makefile	2007-09-05 18:10:43.000000000 -0500
++++ src/pythonnet-2.0-alpha2/Makefile	2009-12-08 03:57:45.203663600 -0600
+@@ -16,7 +16,7 @@ SITEPACKAGES = $(shell $(PYTHON) -c "fro
+     print get_python_lib(plat_specific=1, standard_lib=0)")
+ INSTALL=/usr/bin/install -m644
+ 
+-ifeq ($(origin WINDIR), undefined)
++ifeq ($(WINDIR),)
+     RUNNER = mono
+     ILDASM = monodis
+     ILASM = ilasm
+--- origsrc/pythonnet-2.0-alpha2/src/monoclr/Makefile	2007-07-30 11:17:22.000000000 -0500
++++ src/pythonnet-2.0-alpha2/src/monoclr/Makefile	2009-12-08 04:00:32.155154700 -0600
+@@ -18,7 +18,7 @@ CFLAGS = $(MONO_CFLAGS) $(PY_CFLAGS)
+ all: clr$(BASENAME) $(BASENAME) 
+ 
+ clr$(BASENAME): clrpython.o pynetinit.o
+-	$(GCC) $(LIBS) clrpython.o pynetinit.o -o clr$(BASENAME) 
++	$(GCC) clrpython.o pynetinit.o -o clr$(BASENAME) $(LIBS)
+ 
+ clrpython.o: pynetclr.h clrpython.c
+ 	$(GCC) $(CFLAGS) -c clrpython.c -o clrpython.o 
+@@ -27,7 +27,7 @@ pynetinit.o: pynetclr.h pynetinit.c
+ 	$(GCC) $(CFLAGS) -c pynetinit.c -o pynetinit.o
+ 
+ $(BASENAME): python.c 
+-	$(GCC) $(PY_CFLAGS) $(PY_LIBS) python.c -o $(BASENAME)
++	$(GCC) $(PY_CFLAGS) python.c -o $(BASENAME) $(PY_LIBS)
+ 
+ clean:
+ 	rm -f *.o

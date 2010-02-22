@@ -15,9 +15,11 @@ to use existing Python code and C-based extensions while maintaining
 native execution speeds for Python code.
 
 Runtime requirements:
-  cygwin-1.5.24-2
-  mono-1.2.3.1-1
-  python-2.4.3-1
+  cygwin-1.7.0-67
+  libgcc1-4.3.4-1
+  libmono0-2.4.2.3-1
+  mono-corlib2.0-2.4.2.3-1
+  python-2.5.4-10
 
 Build requirements:
 (besides corresponding -devel packages)

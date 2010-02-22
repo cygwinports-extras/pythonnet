@@ -1,0 +1,37 @@
+inherit python mono
+
+DESCRIPTION=".NET interface for C Python runtime"
+HOMEPAGE="http://pythonnet.sourceforge.net/"
+# setup.py not dist'ed in tarball; fixed in upstream SVN
+SRC_URI="mirror://sourceforge/pythonnet/${P/_/-}.tar.gz
+         http://pythonnet.svn.sourceforge.net/viewvc/pythonnet/trunk/pythonnet/setup.py"
+SRC_DIR=${P/_/-}
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake -j1 clean
+	WINDIR=  cygmake -j1 PY_LIBS="${LIBPYTHON}"
+
+	cat > Python.Runtime.dll.config <<EOF
+<configuration>
+	<dllmap dll="python${PYTHON_VERSION/.}" target="libpython${PYTHON_VERSION}.dll" os="cygwin"/>
+	<dllmap dll="python${PYTHON_VERSION/.}.dll" target="libpython${PYTHON_VERSION}.dll" os="cygwin"/>
+</configuration>
+EOF
+}
+
+src_test() {
+	cd ${B}
+	WINDIR=  make -k test || true
+}
+
+src_install() {
+	cd ${B}
+	exeinto /usr/lib/pythonnet
+	doexe clr.dll Python.Runtime.dll* python.exe
+
+	mono_wrapper pythonnet /usr/lib/pythonnet/python.exe
+
+	dodoc doc/*.{txt,html}
+}
